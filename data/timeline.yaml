@@ -1,0 +1,40 @@
+cve: CVE-2026-88771
+paired_cve: CVE-2026-88772
+recon: "2026-09-24"
+disclosure: "2026-09-27"
+kev_added: "2026-09-27"
+events:
+  - id: reserved
+    at: "2026-09-10T07:14:57Z"
+    title: NetScaler reserves the CVE ID
+  - id: recon
+    at: "2026-09-24T07:32:08Z"
+    title: Initial reconnaissance from one source address
+  - id: suspicious
+    at: "2026-09-24T07:32:15Z"
+    title: Behavioral detection labels the source suspicious
+  - id: malicious
+    at: "2026-09-24T07:32:19Z"
+    title: Behavioral detection labels the source malicious
+  - id: disclosure
+    at: "2026-09-27T15:51:00Z"
+    title: Public disclosure of CVE-2026-88771
+  - id: tag
+    at: "2026-09-27T20:28:39Z"
+    title: GreyNoise deploys the CVE-specific tag and retro-tags 24 Sep
+  - id: kev
+    at: "2026-09-27T00:00:00Z"
+    title: CISA adds CVE-2026-88771 and CVE-2026-88772 to the KEV catalog
+indicators:
+  - kind: ip
+    value: 149.104.78.141
+    label: Published exploitation source
+  - kind: sha256
+    value: 6f5a2a452a7901323abd21879c6cecccb47c06aeeaccb1b467212f3b11e4b1e7
+    label: Published webshell hash
+  - kind: path
+    value: /var/netscaler/logon/LogonPoint/custom/.ctxs.receiver
+    label: Published webshell path
+  - kind: path
+    value: receiver.min.css
+    label: Published webshell alias

@@ -1,0 +1,8 @@
+services:
+  arcadedb:
+    image: arcadedata/arcadedb:latest
+    ports:
+      # 2480 is already taken by another local ArcadeDB. This container still listens on 2480.
+      - "2481:2480"
+    environment:
+      JAVA_OPTS: "-Darcadedb.server.rootPassword=playwithdata"
